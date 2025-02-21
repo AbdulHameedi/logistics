@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "tracking_number": "123AB",
+        "status": "In Progress",
+        "destination": "America",
+        "date": "18/02/24",
+        "customer": "Ebuka"
+    },
+    {
+        "id": 2,
+        "tracking_number": "243AB",
+        "status": "Pending",
+        "destination": "Oshodi",
+        "date": "01/03/24",
+        "customer": "Hammed"
+    },
+    {
+        "id": 3,
+        "tracking_number": "3453AB",
+        "status": "Delivered",
+        "destination": "London",
+        "date": "18/02/05",
+        "customer": "Funke"
+    },
+    {
+        "id": 4,
+        "tracking_number": "4567CD",
+        "status": "In Progress",
+        "destination": "Abuja",
+        "date": "22/03/24",
+        "customer": "Nithub"
+    },
+    {
+        "id": 5,
+        "tracking_number": "5678DE",
+        "status": "Pending",
+        "destination": "Ikeja",
+        "date": "25/03/24",
+        "customer": "Unilag"
+    },
+    {
+        "id": 6,
+        "tracking_number": "6789EF",
+        "status": "Shipped",
+        "destination": "Canada",
+        "date": "28/03/24",
+        "customer": "Tunde"
+    },
+    {
+        "id": 7,
+        "tracking_number": "7890FG",
+        "status": "Delivered",
+        "destination": "Germany",
+        "date": "30/03/24",
+        "customer": "Chuka"
+    },
+    {
+        "id": 8,
+        "tracking_number": "8901GH",
+        "status": "In Progress",
+        "destination": "France",
+        "date": "02/04/24",
+        "customer": "Amaka"
+    },
+    {
+        "id": 9,
+        "tracking_number": "9012HI",
+        "status": "Pending",
+        "destination": "Lagos",
+        "date": "05/04/24",
+        "customer": "Segun"
+    },
+    {
+        "id": 10,
+        "tracking_number": "0123IJ",
+        "status": "Shipped",
+        "destination": "Port Harcourt",
+        "date": "08/04/24",
+        "customer": "Bisi"
+    },
+    {
+        "id": 11,
+        "tracking_number": "1123AB",
+        "status": "Delivered",
+        "destination": "Kano",
+        "date": "12/04/24",
+        "customer": "Musa"
+    },
+    {
+        "id": 12,
+        "tracking_number": "2123BC",
+        "status": "Pending",
+        "destination": "Ibadan",
+        "date": "15/04/24",
+        "customer": "Yemi"
+    },
+    {
+        "id": 13,
+        "tracking_number": "3123CD",
+        "status": "In Progress",
+        "destination": "Abidjan",
+        "date": "18/04/24",
+        "customer": "Aisha"
+    },
+    {
+        "id": 14,
+        "tracking_number": "4123DE",
+        "status": "Shipped",
+        "destination": "Accra",
+        "date": "20/04/24",
+        "customer": "Kwame"
+    },
+    {
+        "id": 15,
+        "tracking_number": "5123EF",
+        "status": "Delivered",
+        "destination": "Nairobi",
+        "date": "25/04/24",
+        "customer": "Kofi"
+    }
+]
