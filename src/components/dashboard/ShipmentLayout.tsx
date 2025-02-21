@@ -1,10 +1,19 @@
 import { useAppState } from "../../context/AppContext";
 import FilterLayouts from "./Header";
+import useShipments from "../../hooks/useShipments";
 
 const ShipmentLayout = () => {
-  const { shipmentData } = useAppState();
+  useShipments();
+  const { shipmentData, statusFilter } = useAppState();
   const { pageMin, pageMax } = useAppState();
-  console.log(pageMin,pageMax)
+  const { loading } = useShipments();
+  // console.log(pageMin,pageMax)
+  const filteredShipments =
+    statusFilter === "All"
+      ? shipmentData
+      : shipmentData.filter((shipment) => shipment.status === statusFilter);
+
+  if (loading) return <div>Loading...</div>;
   return (
     <div>
       <FilterLayouts />
@@ -12,8 +21,8 @@ const ShipmentLayout = () => {
         <table className="w-full">
           <thead className="text-left">
             <tr>
-              <th className="p-2">S/N</th>
-              <th className="p-6">Shipment ID</th>
+              <th className="p-2">ID</th>
+              <th className="p-6">Tracking Number</th>
               <th className="p-6">Date</th>
               <th className="p-6">Customer</th>
               <th className="p-6">Destination</th>
@@ -21,7 +30,7 @@ const ShipmentLayout = () => {
             </tr>
           </thead>
           <tbody>
-            {shipmentData.slice(pageMin, pageMax).map((item, idx) => {
+            {filteredShipments.slice(pageMin, pageMax).map((item, idx) => {
               return (
                 <tr key={idx}>
                   <td className="p-2 text-gray-800">{item.id}</td>

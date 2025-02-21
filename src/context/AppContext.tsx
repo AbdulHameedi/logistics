@@ -11,10 +11,12 @@ interface State {
   pageMin: number;
   pageMax: number;
   theme: string;
+  statusFilter: string
 }
 interface Action {
   type: string;
   payload?: ShipmentsProp[] | null;
+  payload2?: string
 }
 type Dispatch = (action: Action) => void;
 interface AppProviderProps {
@@ -25,11 +27,12 @@ const initialState = {
   pageMin: 0,
   pageMax: 10,
   theme: (localStorage.getItem("theme") as "light" | "dark") || "light",
+  statusFilter: "All"
 };
 const AppStateContext = createContext<State | undefined>(undefined);
 const AppDispathContext = createContext<Dispatch | undefined>(undefined);
 const DashboardReducer = (state: State, action: Action) => {
-  const { type, payload } = action;
+  const { type, payload,payload2 } = action;
   switch (type) {
     case "GET_SHIPMENT_DATA":
       return {
@@ -59,6 +62,11 @@ const DashboardReducer = (state: State, action: Action) => {
       localStorage.setItem("theme", newTheme);
       return { ...state, theme: newTheme };
     }
+    case "SET_STATUS_FILTER":
+      return{
+        ...state,
+        statusFilter: payload2 as string,
+      }
     default:
       return state;
   }
