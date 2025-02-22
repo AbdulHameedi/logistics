@@ -4,7 +4,7 @@ import useShipments from "../../hooks/useShipments";
 
 const ShipmentLayout = () => {
   useShipments();
-  const { shipmentData, statusFilter } = useAppState();
+  const { shipmentData, statusFilter, theme } = useAppState();
   const { pageMin, pageMax } = useAppState();
   const { loading } = useShipments();
   // console.log(pageMin,pageMax)
@@ -17,7 +17,11 @@ const ShipmentLayout = () => {
   return (
     <div>
       <FilterLayouts />
-      <div className="bg-white rounded-lg mb-8 overflow-x-auto scroll-bar">
+      <div
+        className={`rounded-lg mb-8 overflow-x-auto scroll-bar ${
+          theme == "dark" ? "bg-gray-200" : "bg-white"
+        }`}
+      >
         <table className="w-full">
           <thead className="text-left">
             <tr>
@@ -30,20 +34,28 @@ const ShipmentLayout = () => {
             </tr>
           </thead>
           <tbody>
-            {filteredShipments.slice(pageMin, pageMax).map((item, idx) => {
-              return (
-                <tr key={idx}>
-                  <td className="p-2 text-gray-800">{item.id}</td>
-                  <td className="p-6 text-[#0B63F8]">
-                    #{item.tracking_number}
-                  </td>
-                  <td className="p-6 text-gray-800">{item.date}</td>
-                  <td className="p-6 text-gray-800">{item.customer}</td>
-                  <td className="p-6 text-gray-800">{item.destination}</td>
-                  <td className="p-6 text-gray-800">{item.status}</td>
-                </tr>
-              );
-            })}
+            {filteredShipments.length === 0 ? (
+              <tr>
+                <td colSpan={6} className="text-center">
+                  No Shipments Found
+                </td>
+              </tr>
+            ) : (
+              filteredShipments.slice(pageMin, pageMax).map((item, idx) => {
+                return (
+                  <tr key={idx}>
+                    <td className="p-2 text-gray-800">{item.id}</td>
+                    <td className="p-6 text-[#0B63F8]">
+                      #{item.tracking_number}
+                    </td>
+                    <td className="p-6 text-gray-800">{item.date}</td>
+                    <td className="p-6 text-gray-800">{item.customer}</td>
+                    <td className="p-6 text-gray-800">{item.destination}</td>
+                    <td className="p-6 text-gray-800">{item.status}</td>
+                  </tr>
+                );
+              })
+            )}
           </tbody>
         </table>
       </div>
