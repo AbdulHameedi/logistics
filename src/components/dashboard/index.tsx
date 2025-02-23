@@ -12,13 +12,7 @@ const DashboardLayout = () => {
         theme == "dark" ? "bg-black" : "bg-[#F8F8F8]"
       }`}
     >
-      <Suspense
-        fallback={
-          <div className="h-screen flex items-center justify-center">
-            Loading...
-          </div>
-        }
-      >
+      <Suspense>
         <ErrorBoundary>
           <ShipmentLayout />
         </ErrorBoundary>
