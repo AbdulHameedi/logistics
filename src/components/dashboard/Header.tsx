@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <>
       <ModeButton />
-      <div className="flex justify-between items-center my-6">
+      <div className="flex justify-between sm:items-center flex-col sm:flex-row sm:gap-0 gap-4 my-6">
         <h1
           className={`text-2xl font-bold text-gray-800  ${
             theme == "dark" ? "text-white" : "text-black"

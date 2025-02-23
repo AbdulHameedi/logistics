@@ -9,7 +9,7 @@ const DashboardLayout = () => {
   const { theme } = useAppState();
   return (
     <div
-      className={`p-10 relative ${
+      className={`p-4 sm:p-10 relative ${
         theme == "dark" ? "bg-black" : "bg-[#F8F8F8]"
       }`}
     >

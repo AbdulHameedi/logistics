@@ -12,7 +12,6 @@ const ShipmentLayout = () => {
     statusFilter === "All"
       ? shipmentData
       : shipmentData.filter((shipment) => shipment.status === statusFilter);
-
   if (loading) return <div>Loading...</div>;
   return (
     <div>
