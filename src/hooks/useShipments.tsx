@@ -12,7 +12,7 @@ export const useShipments = () => {
       .get("./data.json")
       .then((res) => {
         dispatch({ type: "GET_SHIPMENT_DATA", payload: res.data });
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));

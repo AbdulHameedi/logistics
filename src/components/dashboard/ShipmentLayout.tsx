@@ -1,6 +1,7 @@
 import { useAppState } from "../../context/AppContext";
 import FilterLayouts from "./Header";
 import useShipments from "../../hooks/useShipments";
+import Pagination from "../../utils/Pagination";
 
 const ShipmentLayout = () => {
   useShipments();
@@ -58,6 +59,7 @@ const ShipmentLayout = () => {
           </tbody>
         </table>
       </div>
+      {filteredShipments.length > 0 && <Pagination />}
     </div>
   );
 };
