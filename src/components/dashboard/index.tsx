@@ -1,5 +1,4 @@
 import ErrorBoundary from "../../routes/ErrorBoundary";
-import Pagination from "../../utils/Pagination";
 import { useAppState } from "../../context/AppContext";
 import { Suspense, lazy } from "react";
 
@@ -9,7 +8,7 @@ const DashboardLayout = () => {
   const { theme } = useAppState();
   return (
     <div
-      className={`p-4 sm:p-10 relative ${
+      className={`p-4 sm:p-10 relative h-screen overflow-y-auto ${
         theme == "dark" ? "bg-black" : "bg-[#F8F8F8]"
       }`}
     >
@@ -24,10 +23,6 @@ const DashboardLayout = () => {
           <ShipmentLayout />
         </ErrorBoundary>
       </Suspense>
-
-      <ErrorBoundary>
-        <Pagination />
-      </ErrorBoundary>
     </div>
   );
 };
