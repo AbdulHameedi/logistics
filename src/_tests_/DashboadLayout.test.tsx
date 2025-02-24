@@ -1,8 +1,8 @@
 import { render } from "@testing-library/react";
-import ShipmentLayout from "../components/dashboard/ShipmentLayout";
+import DashboardLayout from "../components/dashboard";
 
-describe("ShipmentLayout", () => {
-  xit("renders ShipmentLayout component", () => {
-    render(<ShipmentLayout />);
+describe("DashboadLayout", () => {
+  it("renders DashboadLayout component", () => {
+    render(<DashboardLayout />);
   });
 });
